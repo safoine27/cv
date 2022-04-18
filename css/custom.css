@@ -1,0 +1,47 @@
+.top-content-footer {
+  padding: 0px 100px;
+  text-align: center;
+}
+.label {
+  padding: 4px 8px;
+  margin: 0 8px 4px 0;
+  border-radius: 6px;
+  background-color: var(--special-color);
+  color: white;
+}
+
+.label-group {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 6px 14px;
+  padding-bottom: 0;
+  background: var(--highlight-color);
+  padding-bottom: 6px;
+  border-bottom-right-radius: 15px;
+}
+
+.logo-icon {
+  color: var(--special-color);
+  margin-left: 5px;
+}
+#topPart {
+  background-image: url(/img/bg.svg);
+  background-size: 74%;
+}
+
+.exp-description {
+  padding: 4px 20px 4px 37px;
+  padding: 0.4rem 2rem 0.4rem 3.7rem;
+  background: var(--highlight-color);
+  display: block;
+  position: relative;
+}
+
+.exp-description p {
+  font-style: italic;
+}
+
+.company-name,
+date-range {
+  display: inline-block !important;
+}
