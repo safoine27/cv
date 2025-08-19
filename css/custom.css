@@ -1,47 +1,944 @@
-.top-content-footer {
-  padding: 0px 100px;
-  text-align: center;
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.label {
-  padding: 4px 8px;
-  margin: 0 8px 4px 0;
-  border-radius: 6px;
-  background-color: var(--special-color);
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Main Layout */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.page {
+  min-height: 100vh;
+}
+
+/* Header Section */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
-.label-group {
+.header-content {
   display: flex;
-  flex-wrap: wrap;
-  padding: 6px 14px;
-  padding-bottom: 0;
-  background: var(--highlight-color);
-  padding-bottom: 6px;
-  border-bottom-right-radius: 15px;
+  align-items: center;
+  gap: 30px;
 }
 
-.logo-icon {
-  color: var(--special-color);
-  margin-left: 5px;
-}
-#topPart {
-  background-image: url(/img/bg.svg);
-  background-size: 74%;
+.profile-section {
+  flex-shrink: 0;
 }
 
-.exp-description {
-  padding: 4px 20px 4px 37px;
-  padding: 0.4rem 2rem 0.4rem 3.7rem;
-  background: var(--highlight-color);
-  display: block;
-  position: relative;
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
 }
 
-.exp-description p {
+.title-section {
+  flex: 1;
+}
+
+.name {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 600px;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+.contact-item i {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* Button Container */
+.button-container {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-btn:active {
+  transform: translateY(0);
+}
+
+/* Print Button */
+.print-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.print-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.print-btn:active {
+  transform: translateY(0);
+}
+
+.print-btn i {
+  font-size: 1rem;
+}
+
+/* Content Layout */
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+/* Section Styling */
+.section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e74c3c;
+}
+
+.section-title i {
+  color: #e74c3c;
+  font-size: 1.3rem;
+}
+
+/* Experience Items */
+.experience-item {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.job-info {
+  flex: 1;
+}
+
+.job-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+
+.company-name {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #495057;
+  margin-bottom: 8px;
+}
+
+.company-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: white;
+  padding: 5px;
+}
+
+.job-meta {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.location, .duration {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.company-description {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #495057;
   font-style: italic;
 }
 
-.company-name,
-date-range {
-  display: inline-block !important;
+.achievements {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.achievements li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.achievements li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.skills-used {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  background: #f8f9fa;
+  color: #495057;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid #dee2e6;
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background: #e74c3c;
+  color: white;
+  border-color: #e74c3c;
+}
+
+/* Certifications */
+.certification-item {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cert-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 0;
+}
+
+.cert-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: white;
+  padding: 3px;
+}
+
+.cert-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+/* Education */
+.education-item {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.degree {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.education-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.school {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Skills Section */
+.skills-group {
+  margin-bottom: 25px;
+}
+
+.skills-subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.skills-description {
+  line-height: 1.6;
+  color: #495057;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #e74c3c;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  padding: 4px 0;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.skills-list li:last-child {
+  border-bottom: none;
+}
+
+.skills-list li::before {
+  content: "•";
+  color: #e74c3c;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* Language Section */
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.language-item:last-child {
+  border-bottom: none;
+}
+
+.language-name {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.language-level {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 400;
+}
+
+/* Print Styles - PDF Friendly - Condensed Layout */
+@media print {
+  /* Reset page styles for print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  body {
+    background: white !important;
+    color: #000 !important;
+    font-size: 10pt;
+    line-height: 1.2;
+  }
+  
+  /* Remove shadows and effects for print */
+  .main {
+    box-shadow: none !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+  
+  /* Compact page setup */
+  @page {
+    size: A4;
+    margin: 0.5cm;
+    orphans: 3;
+    widows: 3;
+  }
+  
+  /* Optimize header for print - more compact */
+  .header {
+    background: #f8f9fa !important;
+    color: #000 !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 0 !important;
+    margin-bottom: 8px !important;
+    padding: 8px !important;
+    page-break-inside: avoid;
+  }
+  
+  .header-content {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-direction: row !important;
+  }
+  
+  .profile-section {
+    flex-shrink: 0 !important;
+  }
+  
+  .title-section {
+    flex: 1 !important;
+  }
+  
+  .contact-section {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    align-items: flex-end !important;
+  }
+  
+  /* Ensure avatar prints well - smaller for space */
+  .avatar {
+    border: 1px solid #dee2e6 !important;
+    filter: grayscale(0%) !important;
+    width: 60px !important;
+    height: 60px !important;
+  }
+  
+  /* Remove borders from company logos when printing */
+  .company-logo {
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  /* Optimize content layout for print - compact two-column layout */
+  .content {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr !important;
+    gap: 8px !important;
+    margin-top: 5px !important;
+  }
+  
+  .left-column,
+  .right-column {
+    width: auto !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* Compact sections */
+  .section {
+    page-break-inside: auto;
+    margin-bottom: 6px !important;
+  }
+  
+  .experience-item,
+  .certification-item,
+  .education-item {
+    page-break-inside: avoid !important;
+    page-break-after: auto;
+    border: none !important;
+    box-shadow: none !important;
+    margin-bottom: 4px !important;
+    padding: 6px !important;
+  }
+  
+  /* Optimize experience header spacing for print */
+  .experience-header {
+    margin-bottom: 2px !important;
+  }
+  
+  /* Reduce spacing between job title and location/duration */
+  .job-title {
+    margin-bottom: 1px !important;
+  }
+  
+  /* Compact company descriptions */
+  .company-description {
+    margin-bottom: 2px !important;
+    padding: 2px 3px !important;
+    font-style: italic !important;
+  }
+  
+  /* Compact typography for print */
+  .section-title {
+    color: #000 !important;
+    border-bottom: 1px solid #000 !important;
+    margin-bottom: 4px !important;
+    padding-bottom: 2px !important;
+    font-size: 11pt !important;
+  }
+  
+  .section-title i {
+    color: #000 !important;
+    font-size: 11pt !important;
+  }
+  
+  .job-title,
+  .cert-title,
+  .degree {
+    color: #000 !important;
+    font-size: 10pt !important;
+    margin-bottom: 3px !important;
+  }
+  
+  .company-name {
+    color: #000 !important;
+    font-size: 9pt !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .cert-logo {
+    width: 40px !important;
+    height: 40px !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  
+  .company-description,
+  .skills-description {
+    background: #f8f9fa !important;
+    color: #000 !important;
+    border-left: 2px solid #000 !important;
+    padding: 4px !important;
+    margin-bottom: 4px !important;
+    font-size: 8pt !important;
+    line-height: 1.1 !important;
+  }
+  
+  /* Compact spacing for print */
+  .achievements {
+    margin-bottom: 4px !important;
+    page-break-inside: avoid;
+  }
+  
+  .achievements li {
+    margin-bottom: 1px !important;
+    font-size: 8pt !important;
+    line-height: 1.1 !important;
+    page-break-inside: avoid;
+  }
+  
+  .achievements li::before {
+    color: #000 !important;
+  }
+  
+  /* Compact job details */
+  .job-meta,
+  .education-meta,
+  .cert-details {
+    font-size: 7pt !important;
+    margin-bottom: 3px !important;
+    gap: 6px !important;
+  }
+  
+  /* Compact skills */
+  .skill-tag {
+    font-size: 7pt !important;
+    padding: 2px 6px !important;
+    margin: 1px !important;
+    background: #f8f9fa !important;
+    color: #000 !important;
+    border: 1px solid #dee2e6 !important;
+    page-break-inside: avoid;
+  }
+  
+  .skills-subtitle {
+    font-size: 9pt !important;
+    margin-bottom: 4px !important;
+  }
+  
+  /* Compact skills list for print */
+  .skills-list li {
+    font-size: 7pt !important;
+    padding: 1px 0 !important;
+    margin-bottom: 1px !important;
+    page-break-inside: avoid;
+  }
+  
+  .skills-list li::before {
+    color: #000 !important;
+  }
+  
+  /* Compact language section */
+  .language-item {
+    padding: 2px 0 !important;
+    font-size: 8pt !important;
+    border-bottom: 1px solid #dee2e6 !important;
+  }
+  
+  .language-name {
+    font-size: 8pt !important;
+  }
+  
+  .language-level {
+    color: #000 !important;
+    font-size: 8pt !important;
+  }
+  
+  /* Compact name and title */
+  .name {
+    font-size: 14pt !important;
+    margin-bottom: 3px !important;
+  }
+  
+  .title {
+    font-size: 10pt !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .description {
+    font-size: 7pt !important;
+    line-height: 1.1 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* Compact contact information */
+  .contact-item {
+    color: #000 !important;
+    font-size: 8pt !important;
+    margin-bottom: 2px !important;
+  }
+  
+  .contact-item i {
+    color: #000 !important;
+    font-size: 8pt !important;
+  }
+  
+  /* Hide buttons when printing */
+  .button-container {
+    display: none !important;
+  }
+  
+  /* Hide hover effects for print */
+  .experience-item:hover,
+  .skill-tag:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Page break controls for better content flow */
+  .experience-item {
+    page-break-inside: avoid !important;
+    page-break-after: auto;
+    orphans: 3;
+    widows: 3;
+  }
+  
+  /* Ensure experience content doesn't break */
+  .experience-header,
+  .company-description,
+  .achievements,
+  .skills-used {
+    page-break-inside: avoid;
+  }
+  
+  .skills-group {
+    page-break-inside: avoid;
+  }
+  
+  .section {
+    page-break-inside: auto;
+  }
+  
+  .right-column {
+    page-break-inside: auto;
+  }
+  
+  /* Remove all forced page breaks for experience items */
+  .experience-item:nth-child(2),
+  .experience-item:nth-child(3),
+  .experience-item:nth-child(4) {
+    page-break-before: auto;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-section {
+    align-items: center;
+  }
+  
+  .content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .job-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .education-meta {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .cert-details {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .language-item {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .language-level {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 10px;
+  }
+  
+  .header {
+    padding: 20px;
+  }
+  
+  .name {
+    font-size: 2rem;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+  }
+  
+  .experience-item {
+    padding: 15px;
+  }
+  
+  .experience-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .job-info {
+    width: 100%;
+  }
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .main {
+  background-color: #2d2d2d !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark-mode .header {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+}
+
+.dark-mode .section-title {
+  color: #ecf0f1 !important;
+  border-bottom-color: #e74c3c !important;
+}
+
+.dark-mode .section-title i {
+  color: #e74c3c !important;
+}
+
+.dark-mode .experience-item,
+.dark-mode .certification-item,
+.dark-mode .education-item {
+  background: #3a3a3a !important;
+  border-color: #555 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .experience-item:hover,
+.dark-mode .certification-item:hover,
+.dark-mode .education-item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark-mode .job-title,
+.dark-mode .cert-title,
+.dark-mode .degree {
+  color: #ecf0f1 !important;
+}
+
+.dark-mode .company-name {
+  color: #bdc3c7 !important;
+}
+
+.dark-mode .company-description {
+  color: #bdc3c7 !important;
+}
+
+.dark-mode .achievements li {
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .skills-list li {
+  color: #e0e0e0 !important;
+  border-bottom-color: #555 !important;
+}
+
+.dark-mode .skills-list li::before {
+  color: #e74c3c !important;
+}
+
+.dark-mode .language-item {
+  border-bottom-color: #555 !important;
+}
+
+.dark-mode .language-name {
+  color: #ecf0f1 !important;
+}
+
+.dark-mode .language-level {
+  color: #bdc3c7 !important;
+}
+
+.dark-mode .skill-tag {
+  background: #4a4a4a !important;
+  color: #e0e0e0 !important;
+  border-color: #666 !important;
+}
+
+.dark-mode .skill-tag:hover {
+  background: #e74c3c !important;
+  color: #fff !important;
+  border-color: #e74c3c !important;
+}
+
+.dark-mode .skills-description {
+  background: #4a4a4a !important;
+  color: #e0e0e0 !important;
+}
+
+/* Dark mode print button container */
+.dark-mode .button-container {
+  background: transparent !important;
 }
