@@ -604,10 +604,28 @@ body {
   }
   
   .cert-logo {
-    width: 40px !important;
-    height: 40px !important;
-    border: none !important;
-    padding: 0 !important;
+    display: none !important;
+  }
+  
+  .cert-header {
+    display: block !important;
+    text-align: left !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .cert-title {
+    font-size: 9pt !important;
+    color: #000 !important;
+  }
+  
+  .cert-details {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    text-align: left !important;
+    font-size: 7pt !important;
+    color: #000 !important;
   }
   
   .company-description,
