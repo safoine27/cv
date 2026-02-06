@@ -58,7 +58,7 @@ body {
 
 .name {
   font-size: 2.5rem;
-  font-weight: 300;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 
@@ -706,6 +706,11 @@ body {
     font-size: 7pt !important;
     line-height: 1.1 !important;
     margin-bottom: 0 !important;
+    text-align: left !important;
+  }
+  
+  .title-section {
+    text-align: left !important;
   }
   
   /* Compact contact information */
